@@ -1,5 +1,33 @@
 {
   "cSpell.words": [
     "fastify"
-  ]
+  ],
+  "material-icon-theme.folders.associations": {
+    "infra": "app",
+    "entities": "class",
+    "schemas": "class",
+    "repositories": "mappings",
+    "http": "container",
+    "migrations": "tools",
+    "modules": "components",
+    "implementations": "core",
+    "presentation": "custom",
+    "protocols": "packages",
+    "accounts": "Client",
+    "useCases": "Controller",
+    "seed": "Admin",
+    "local": "Private"
+  },
+  // "material-icon-theme.files.associations": {
+  //   "tsconfig.json": "tune",
+  //   "*.ts": "typescript-def",
+  //   "*.module.ts": "nest-module",
+  //   "*.decorator.ts": "nest-decorator",
+  //   "*.controller.ts": "nest-controller",
+  //   "*.service.ts": "nest-service",
+  //   "*.guard.ts": "nest-guard",
+  //   "*.pipe.ts": "nest-pipe",
+  //   "*.e2e-spec.ts": "test-js",
+  //   "vitest.config.e2e.ts": "vitest"
+  // },
 }

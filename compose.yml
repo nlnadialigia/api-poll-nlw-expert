@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  postgres:
+    container_name: psql
+    image: bitnami/postgresql:latest
+    ports:
+      - "9000:5432"
+    environment:
+      - POSTGRES_USER=nlw-expert
+      - POSTGRES_PASSWORD=api-poll
+      - POSTGRES_DB=polls
+    volumes:
+      - polls_pg_data:/bitnami/postgresql
+
+  redis:
+    container_name: redis
+    image: bitnami/redis:latest
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "9379:6379"
+    volumes:
+      - "polls_redis_data:/bitnami/redis/data"
+
+volumes:
+  polls_pg_data:
+  polls_redis_data:
