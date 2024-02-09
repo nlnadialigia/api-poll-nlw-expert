@@ -1,7 +1,7 @@
 import {FastifyInstance} from "fastify";
 import {z} from "zod";
-import {prisma} from "../http/lib/prisma";
-import {redis} from "../http/lib/redis";
+import {prisma} from "../../lib/prisma";
+import {redis} from "../../lib/redis";
 
 export async function getPoll(app: FastifyInstance) {
   app.get("/polls/:pollId", async (request, reply) => {
@@ -21,7 +21,7 @@ export async function getPoll(app: FastifyInstance) {
     })
 
     if (!poll) {
-      return reply.status(404).send("Poll not found")
+      return reply.status(404).send({message: "Poll not found"})
     }
 
     const result = await redis.zrange(pollId, 0, -1, "WITHSCORES")
@@ -46,5 +46,33 @@ export async function getPoll(app: FastifyInstance) {
         })
       }
     })
+  })
+}
+
+export async function getPolls(app: FastifyInstance) {
+  app.get("/polls", async (_request, reply) => {
+    const data = await prisma.poll.findMany()
+
+    if (!data) {
+      return reply.status(404).send({message: "Polls not found"})
+    }
+
+    const polls = [];
+
+    for (const poll of data) {
+      const options = await prisma.pollOption.findMany({where: {pollId: poll.id}})
+      polls.push({
+        id: poll.id,
+        title: poll.title,
+        options: options.map(option => {
+          return {
+            id: option.id,
+            title: option.title,
+          }
+        })
+      })
+    }
+  
+    return reply.send(polls)
   })
 }

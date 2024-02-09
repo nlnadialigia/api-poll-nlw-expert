@@ -31,7 +31,10 @@ API desenvolvida na NLW Expert - Trilha Node, da [Rocketseat](https://www.rocket
 ## 📎 Passo a passo
 
 - Criação de enquetes.
-  - A enquete deverá conter os campos: id, title, createdAt e updatedAt
+- Listar enquete by ID.
+- Votar em uma enquete.
+- Salvar os votes no REDIS
+- Verificar os votos em tempo real
 
 <br>
 
@@ -67,11 +70,13 @@ $ pnpm run dev
 - [Prisma](https://prisma.io)
 - [Postgres](https://postgresql.org)
 - [Docker](https://www.docker.com)
+- [Redis](https://redis.io/)
 
 #### 🎲 Documentação
 
 - [Rest Client](client.http)
-- [Swagger](https://app.swaggerhub.com/apis/nlnadialigia/api-de_gerenciamento_de_tarefas/1.0.0)
+
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/14773197-8cdb543e-fab2-448a-8971-104d584c7dfb?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D14773197-8cdb543e-fab2-448a-8971-104d584c7dfb%26entityType%3Dcollection%26workspaceId%3Dde85b240-27db-4f14-8466-8486dc2e9600#?env%5Blocal%5D=W3sia2V5IjoiYmFzZVVSTCIsInZhbHVlIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6ImRlZmF1bHQiLCJzZXNzaW9uVmFsdWUiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAiLCJzZXNzaW9uSW5kZXgiOjB9XQ==)
 
 <br>
 

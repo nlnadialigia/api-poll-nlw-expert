@@ -3,20 +3,9 @@
     "fastify"
   ],
   "material-icon-theme.folders.associations": {
-    "infra": "app",
-    "entities": "class",
-    "schemas": "class",
-    "repositories": "mappings",
     "http": "container",
     "migrations": "tools",
-    "modules": "components",
-    "implementations": "core",
-    "presentation": "custom",
-    "protocols": "packages",
-    "accounts": "Client",
-    "useCases": "Controller",
-    "seed": "Admin",
-    "local": "Private"
+    "ws": "Wakatime"
   },
   // "material-icon-theme.files.associations": {
   //   "tsconfig.json": "tune",
