@@ -1,11 +1,30 @@
 @baseUrl=http://127.0.0.1:5000
+@pollId={{create_poll.response.body.pollId}}
+@optionId={{get_poll_by_id.response.body.poll.options[1].id}}
 
-# @name hello
+# @name create_poll
 POST {{baseUrl}}/polls
 content-type: application/json
 
 {
-  "title": "Primeiro Poll" 
+  "title": "Enquete com Option",
+  "options": ["AAA", "BBBB", "CCC"]
+}
+
+###
+
+# @name get_poll_by_id
+GET {{baseUrl}}/polls/{{pollId}}
+content-type: application/json
+
+###
+
+# @name vote_on_poll
+POST {{baseUrl}}/polls/{{pollId}}/votes
+content-type: application/json
+
+{
+  "pollOptionId": "{{optionId}}"
 }
 
 ###
